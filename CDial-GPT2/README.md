@@ -1,5 +1,6 @@
 本项目提供了一个大规模中文对话数据集，并提供了在此数据集上的中文对话预训练模型（中文GPT模型），更多信息可参考我们的[论文](https://arxiv.org/abs/2008.03946) [original code]()
 
+download LCCC-base to /data
 LCCC-base 数据集的清洗过程比 LCCC-large 更为严格，因此其规模也更小
 
 #### 自动评价指标
