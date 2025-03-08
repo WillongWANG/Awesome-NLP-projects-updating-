@@ -1,0 +1,11 @@
+python3 -u decode_seq2seq.py  \
+  --model_type unilm  \
+  --model_name_or_path /home/humeng/e/projects/hot_search/Unilm/model_dir/  \
+  --model_recover_path /home/humeng/e/projects/hot_search/Unilm/model_dir/pytorch_model.bin \
+  --max_seq_length 30  \
+  --input_file /home/humeng/e/projects/hot_search/modules/hot_topic/conversion_words/data/test_lucene_match_filter_with_entities_res.csv  \
+  --output_file /home/humeng/e/projects/hot_search/Unilm/data/predict_cov_20210115.json \
+  --do_lower_case \
+  --batch_size 32 \
+  --beam_size 5 \
+  --max_tgt_length 10

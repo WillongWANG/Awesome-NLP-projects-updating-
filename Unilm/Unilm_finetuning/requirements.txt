@@ -1,0 +1,5 @@
+transformers==4.4.2 torch tensorboard==2.4.1 onnx==1.9.0 onnxruntime
+torch==1.7.1,onnxruntime==1.8.0(没)
+
+finetune_data.csv为改写任务
+
