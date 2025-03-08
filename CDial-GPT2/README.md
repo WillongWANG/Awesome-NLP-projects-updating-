@@ -48,7 +48,7 @@ python interact.py --model_checkpoint YOUR_MODEL_PATH  # Interact on the termina
 | GPT2<sub>LCCC-base</sub> | 95.5M | 22.76 | 5.69 | 2.50 | 7.7 | 10.87 | 66.24 | 83.46 |
 | GPT<sub>LCCC-large</sub> | 95.5M | 18.23 | 6.63 | 3.20 | 8.3 | 12.71 | 66.25 | 83.63 |
 
-In the orginal paper, GPT2 and GPT have the same size and been trained on the same dataset, while GPT2 performs worse.
+In the orginal paper, GPT2 and GPT have the same size and been trained on the same dataset, while GPT2 performs worse. I don't understand...
 
 ## Generated dialogues
 
