@@ -3,13 +3,13 @@ This project utilizes the [CDial-GPT2_LCCC-base](https://huggingface.co/thu-coai
 ![](https://github.com/WillongWANG/Awesome-NLP-projects-updating-/blob/main/CDial-GPT2/figures/inputs.png)
 
 ## Requirements
-torch==1.4.0 
-(python<3.9, or pip can not find :D)
-torchvision==0.5.0
-pytorch-ignite==0.2.1
-transformers==2.1.1
-tensorboardX==1.8
-protobuf==3.20.3
+torch==1.4.0  
+(python<3.9, or pip can not find :D)  
+torchvision==0.5.0  
+pytorch-ignite==0.2.1  
+transformers==2.1.1  
+tensorboardX==1.8  
+protobuf==3.20.3  
 
 ## Fine-tuning
 
