@@ -80,7 +80,7 @@ def main():
                         help="Path to fine-tuned pre-trained model or shortcut name selected in the list: " + ", ".join(
                             ALL_MODELS))
     parser.add_argument("--model_recover_path",
-                        default='',
+                        default='model_dir/pytorch_model.bin',
                         type=str,
                         help="The file of pretrained model.")
     parser.add_argument("--config_name", default="", type=str,
