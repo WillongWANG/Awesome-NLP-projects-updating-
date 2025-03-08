@@ -76,11 +76,11 @@ def main():
     parser.add_argument("--model_type", default="unilm", type=str,
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
     ###
-    parser.add_argument("--model_name_or_path", default='/root/Unilm_finetuning/output_dir/model.50.bin', type=str,
+    parser.add_argument("--model_name_or_path", default='model_dir/', type=str,
                         help="Path to fine-tuned pre-trained model or shortcut name selected in the list: " + ", ".join(
                             ALL_MODELS))
     parser.add_argument("--model_recover_path",
-                        default='model_dir/pytorch_model.bin',
+                        default='',
                         type=str,
                         help="The file of pretrained model.")
     parser.add_argument("--config_name", default="", type=str,
@@ -100,7 +100,7 @@ def main():
                         help="For fp16: Apex AMP optimization level selected in ['O0', 'O1', 'O2', and 'O3']."
                              "See details at https://nvidia.github.io/apex/amp.html")
     parser.add_argument("--input_file", type=str, help="Input file",
-                        default='data/test_retrieval.txt')
+                        default='data/test_retrieval.csv')
     parser.add_argument('--subset', type=int, default=0,
                         help="Decode a subset of the input dataset.")
     parser.add_argument("--output_file", type=str, help="output file",
