@@ -38,11 +38,11 @@ python interact.py --model_checkpoint YOUR_MODEL_PATH  # Interact on the termina
 
 ### Metrics
 
-| model(fine-tuned on STC) | size | PPL | BLEU-2 | BLEU-4 | Dist-1 | Dist-2 | Greedy Matching | Embedding Average |
+| model (all fine-tuned on STC) | size | PPL | BLEU-2 | BLEU-4 | Dist-1 | Dist-2 | Greedy Matching | Embedding Average |
 | :------ | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 | Attn-Seq2seq | 73M | 34.20 | 3.93 | 0.90 | 8.5 | 11.91 | 65.84 | 83.38 |
 | Transformer | 113M | 22.10 | 6.72 | 3.14 | 8.8 | 13.97 | 66.06 | 83.55 |
-| [GPT2-chitchat(baseline)](https://github.com/yangjianxin1/GPT2-chitchat) | 88M | - | 2.28 | 0.54 | 10.3 | 16.25 | 61.54 | 78.94 |
+| [GPT2-chitchat (baseline)](https://github.com/yangjianxin1/GPT2-chitchat) | 88M | - | 2.28 | 0.54 | 10.3 | 16.25 | 61.54 | 78.94 |
 | GPT<sub>Novel</sub> | 95.5M | 21.27 | 5.96 | 2.71 | 8.0 | 11.72 | 66.12 | 83.34 |
 | GPT<sub>LCCC-base</sub> | 95.5M | 18.38 | 6.48 | 3.08 | 8.3 | 12.68 | 66.21 | 83.54 |
 | GPT2<sub>LCCC-base</sub> | 95.5M | 22.76 | 5.69 | 2.50 | 7.7 | 10.87 | 66.24 | 83.46 |
