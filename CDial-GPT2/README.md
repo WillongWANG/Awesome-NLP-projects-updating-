@@ -32,8 +32,8 @@ The model was trained on 4*RTX 2080 Ti at AutoDL platform (nearly 2:40~ for only
 ### Inference
 ```
 YOUR_MODEL_PATH: : the model path used for generation (i.e. fine-tuned model:.../model_training_args.bin)
-python infer.py --model_checkpoint ...model_training_args.bin --datapath data/STC_test.json --out_path STC_result.txt  # Inference on a corpus
-python interact.py --model_checkpoint YOUR_MODEL_PATH  # Interact on the terminal
+python infer.py --gpt2 --model_checkpoint ...model_training_args.bin --datapath data/STC_test.json --out_path STC_result.txt  # Inference on a corpus
+python interact.py --gpt2 --model_checkpoint YOUR_MODEL_PATH  # Interact on the terminal
 ```
 
 ### Metrics
