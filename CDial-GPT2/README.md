@@ -38,7 +38,7 @@ python interact.py --model_checkpoint YOUR_MODEL_PATH  # Interact on the termina
 
 ### Metrics
 
-| model(all fine-tuned on STC) | size | PPL | BLEU-2 | BLEU-4 | Dist-1 | Dist-2 | Greedy Matching | Embedding Average |
+| model(fine-tuned on STC) | size | PPL | BLEU-2 | BLEU-4 | Dist-1 | Dist-2 | Greedy Matching | Embedding Average |
 | :------ | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 | Attn-Seq2seq | 73M | 34.20 | 3.93 | 0.90 | 8.5 | 11.91 | 65.84 | 83.38 |
 | Transformer | 113M | 22.10 | 6.72 | 3.14 | 8.8 | 13.97 | 66.06 | 83.55 |
