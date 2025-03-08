@@ -57,6 +57,7 @@ def main():
                         help="The input data file name.")
     parser.add_argument("--model_type", default='unilm', type=str,
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
+    #运行完后model_dir/中的bin换成该文件运行完得到的bin（在output_dir/）
     parser.add_argument("--model_name_or_path", default='model_dir/', type=str,
                         help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(
                             ALL_MODELS))
