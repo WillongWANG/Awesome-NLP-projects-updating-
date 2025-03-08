@@ -75,13 +75,14 @@ def main():
     # Required parameters
     parser.add_argument("--model_type", default="unilm", type=str,
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
-    parser.add_argument("--model_name_or_path", default='model_dir/', type=str,
-                        help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(
+    ###
+    parser.add_argument("--model_name_or_path", default='/root/Unilm_finetuning/output_dir/model.50.bin', type=str,
+                        help="Path to fine-tuned pre-trained model or shortcut name selected in the list: " + ", ".join(
                             ALL_MODELS))
     parser.add_argument("--model_recover_path",
                         default='model_dir/pytorch_model.bin',
                         type=str,
-                        help="The file of fine-tuned pretraining model.")
+                        help="The file of pretrained model.")
     parser.add_argument("--config_name", default="", type=str,
                         help="Pretrained config name or path if not the same as model_name")
     parser.add_argument("--tokenizer_name", default="", type=str,
