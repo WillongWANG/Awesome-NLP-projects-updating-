@@ -31,7 +31,7 @@ In the original paper, the number of the warmup epoch was set to 1, and the maxi
 ### Inference
 ```
 YOUR_MODEL_PATH: : the model path used for generation (i.e. fine-tuned model:.../model_training_args.bin)
-python infer.py --model_checkpoint ...model_training_args.bin --datapath data/STC_test.json --out_path STC_result.txt  # Do Inference on a corpus
+python infer.py --model_checkpoint ...model_training_args.bin --datapath data/STC_test.json --out_path STC_result.txt  # Inference on a corpus
 python interact.py --model_checkpoint YOUR_MODEL_PATH  # Interact on the terminal
 ```
 
