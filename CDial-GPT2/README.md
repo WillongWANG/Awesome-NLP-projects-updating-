@@ -118,6 +118,7 @@ interactive script：
 | Bot | 我 说 的 是 别 人 |
 
 hhh...
+
   
 or just use the original CDial-GPT2_LCCC-base:
 
@@ -146,6 +147,7 @@ interactive script：
 
 em...somewhat perfunctory
 
+  
 more interesting dialogues:
 
 | Post | Response |
