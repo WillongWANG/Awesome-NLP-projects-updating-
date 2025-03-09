@@ -27,7 +27,7 @@ python train.py --pretrained --gpt2 --model_checkpoint thu-coai/CDial-GPT2_LCCC-
 python -m torch.distributed.launch --nproc_per_node=4 train.py --gpt2 --pretrained --model_checkpoint thu-coai/CDial-GPT2_LCCC-base --data_path data/STC.json --scheduler linear  #Training on 4 GPUs distributedly, following the original paper(4*RTX 2080 Ti)
 ```
 In the original paper, the number of the warmup epoch was set to 1, and the maximum learning rate was 6.25e-5. The batch size was set to 8, fine-tune epochs was 10. But in the original code, lr=5e-5, batch size=2, warmup steps=5000, I follow the same settings.   
-The model was trained on 4*RTX 2080 Ti at AutoDL platform (nearly 2:40~ for only 1 epoch (>_<)) as an RTX 3080 or higher GPU requires CUDA version 11.x or above to be utilized.
+The model was trained on 4*RTX 2080 Ti at AutoDL platform (nearly 2:40~ for only around 1 epoch (>_<)) as an RTX 3080 or higher GPU requires CUDA version 11.x or above to be utilized.
 
 ### Inference
 ```
@@ -78,7 +78,7 @@ interactive script：
 | Bot | 不 ， 是 逼 你 动 口 是 吧 |
 
 
-My results (CDial-GPT2_LCCC-base fine-tuned on STC for 1 epoch):
+My results (CDial-GPT2_LCCC-base fine-tuned on STC):
 
 | Post | Response |
 | :----- | :---------- |
