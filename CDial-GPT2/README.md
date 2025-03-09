@@ -31,7 +31,7 @@ python -m torch.distributed.launch --nproc_per_node=4 train.py --gpt2 --pretrain
 In the original paper, the number of the warmup epoch was set to 1, and the maximum learning rate was 6.25e-5. The batch size was set to 8, fine-tune epochs was 10. But in the original code, lr=5e-5, batch size=2, warmup steps=5000, I follow the same settings.   
 The model was trained on 4*RTX 2080 Ti at AutoDL platform (nearly 30h for only around 1 epoch (>_<)) as an RTX 3080 or higher GPU requires CUDA version 11.x or above to be utilized.
 
-![]()
+![](https://github.com/WillongWANG/Awesome-NLP-projects-updating-/blob/main/CDial-GPT2/p.png)
 
 ### Inference
 After running train.py, remember to load the model parameters from the .pth checkpoint file in the runs/ directory.
