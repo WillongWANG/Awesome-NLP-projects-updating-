@@ -17,9 +17,9 @@ default parameters:
 ```--num_train_epochs: ...```    
 ```--beam_size (beam search topk): 3```
 
-After running, replace the .bin file in model_dir/ with the .bin file generated in output_dir/ (renamed to pytorch_model.bin). **This is important!**
+After running, replace the .bin file in ```model_dir/``` with the .bin file generated in ```output_dir/``` (renamed to ```pytorch_model.bin```). **This is important!**
 
-Beam search and nucleus sampling demos are in decode_method.py.
+Beam search and nucleus sampling demos are in ```decode_method.py```.
 
 ### Paraphrasing:
 ```
