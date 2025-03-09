@@ -91,8 +91,7 @@ interactive script：
 | Bot | 我 说 话 就 是 你 不 行 。 |
 | User | 逼我动手是吧 |
 | Bot | 不 ， 是 逼 你 动 口 是 吧 |
-
-
+  
 My results (CDial-GPT2_LCCC-base fine-tuned on STC):
 
 | Post | Response |
@@ -119,7 +118,7 @@ interactive script：
 | Bot | 我 说 的 是 别 人 |
 
 hhh...
-
+  
 or just use the original CDial-GPT2_LCCC-base:
 
 | Post | Response |
