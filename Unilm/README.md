@@ -7,15 +7,15 @@ This project utilized the sequence-to-sequence language modeling capability of [
 ```
 python train_local.py
 ```
-I pretrained the original model (BertForPreTrainingLossMask from src.pytorch_pretrained_bert.modeling) for 1000 epochs, resulting in model.4037.bin (not uploaded, try it yourself) with mlm_loss of 7.2318 and nsp_loss of 0.6929. The performance is inferior to the provided model (/model_dir/pytorch_model.bin) with mlm_loss of 6.7914 and nsp_loss of 0.7013. Even after training the model initialized from the provided pytorch_model.bin for another 3000 epochs, there was no improvement: mlm_loss 6.5479, nsp_loss 0.7011.
+I pretrained the original model (BertForPreTrainingLossMask from src.pytorch_pretrained_bert.modeling) for 1000 epochs, resulting in model.4037.bin (not uploaded, try it yourself) with ```mlm_loss 7.2318 and nsp_loss 0.6929```. The performance is inferior to the provided model (/model_dir/pytorch_model.bin) with ```mlm_loss 6.7914 and nsp_loss 0.7013```. Even after training the model initialized from the provided pytorch_model.bin for another 3000 epochs, there was no improvement: ```mlm_loss 6.5479, nsp_loss 0.7011```.
 
 ### Fine-tuning:
 ```
 python run_seq2seq.py
 ```
-default parameters:
---num_train_epochs: ...
---beam_size (beam search topk): 3
+default parameters:  
+```--num_train_epochs: ...```    
+```--beam_size (beam search topk): 3```
 
 After running, replace the .bin file in model_dir/ with the .bin file generated in output_dir/ (renamed to pytorch_model.bin). **This is important!**
 
