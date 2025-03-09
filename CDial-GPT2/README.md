@@ -102,9 +102,9 @@ My results (CDial-GPT2_LCCC-base fine-tuned on STC):
 
 | Post | Response |
 | :----- | :---------- |
-| 这 居 然 是 北 京 不 是 哈 尔 滨 。 | 哈 尔 滨 的 天 气 好 像 比 北 京 好 点 ， 我 这 里 就 是 小 雨 ， 白 天 都 是 大 风 |
-| 运 营 商 校 园 广 告 大 P K ， 太 欢 乐 了 ！ 哈 哈 哈 。 | 我 以 为 是 马 云 的 广 告 。 |
-| D e l s a S p o s a 糖 果 色 系 列 婚 纱 ， 粉 蓝 红 紫 ， 俏 皮 又 清 新 ， 你 喜 欢 吗 ？ | 最 后 一 件 太 美 了 ， 美 的 不 像 话 ！ |
+| 这 居 然 是 北 京 不 是 哈 尔 滨 。 | 天 津 也 有 这 么 大 的 雪 ， 没 有 下 雪 |
+| 运 营 商 校 园 广 告 大 P K ， 太 欢 乐 了 ！ 哈 哈 哈 。 | 好 棒 啊 ！ 有 机 会 一 定 要 去 看 看 |
+| D e l s a S p o s a 糖 果 色 系 列 婚 纱 ， 粉 蓝 红 紫 ， 俏 皮 又 清 新 ， 你 喜 欢 吗 ？ | 好 漂 亮 的 红 色 ， 可 惜 我 不 喜 欢 。 |
 
 interactive script：
 
@@ -131,9 +131,9 @@ or just use the original CDial-GPT2_LCCC-base:
 
 | Post | Response |
 | :----- | :---------- |
-| 这 居 然 是 北 京 不 是 哈 尔 滨 。 | 哈 尔 滨 的 天 气 好 像 比 北 京 好 点 ， 我 这 里 就 是 小 雨 ， 白 天 都 是 大 风 |
-| 运 营 商 校 园 广 告 大 P K ， 太 欢 乐 了 ！ 哈 哈 哈 。 | 我 以 为 是 马 云 的 广 告 。 |
-| D e l s a S p o s a 糖 果 色 系 列 婚 纱 ， 粉 蓝 红 紫 ， 俏 皮 又 清 新 ， 你 喜 欢 吗 ？ | 最 后 一 件 太 美 了 ， 美 的 不 像 话 ！ |
+| 这 居 然 是 北 京 不 是 哈 尔 滨 。 | 你 咋 知 道 |
+| 运 营 商 校 园 广 告 大 P K ， 太 欢 乐 了 ！ 哈 哈 哈 。 | 你 不 是 说 我 么 |
+| D e l s a S p o s a 糖 果 色 系 列 婚 纱 ， 粉 蓝 红 紫 ， 俏 皮 又 清 新 ， 你 喜 欢 吗 ？ | 我 喜 欢 ！ 哈 哈 哈 ！ |
 
 interactive script：
 
@@ -154,9 +154,3 @@ interactive script：
 
 em...somewhat perfunctory
 
-<br>
-  
-more interesting dialogues:
-
-| Post | Response |
-| :----- | :---------- |
