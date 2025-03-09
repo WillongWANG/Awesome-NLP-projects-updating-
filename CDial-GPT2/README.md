@@ -77,7 +77,7 @@ The original results (single-turn generated examples from STC dataset using GPT<
 
 interactive script：
 
-| Roel | Response |
+| Role | Response |
 | :----- | :---------- |
 | User | 别爱我没结果 |
 | Bot | 没 结 果 的 爱 是 多 么 的 痛 。 |
@@ -104,7 +104,7 @@ My results (CDial-GPT2_LCCC-base fine-tuned on STC):
 
 interactive script：
 
-| Roel | Response |
+| Role | Response |
 | :----- | :---------- |
 | User | 别爱我没结果 |
 | Bot | 别 爱 我 了 ， 一 起 死 磕 |
@@ -133,7 +133,7 @@ or just use the original CDial-GPT2_LCCC-base:
 
 interactive script：
 
-| Roel | Response |
+| Role | Response |
 | :----- | :---------- |
 | User | 别爱我没结果 |
 | Bot | 没 有 |
