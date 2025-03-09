@@ -30,9 +30,24 @@ In the original paper, the number of the warmup epoch was set to 1, and the maxi
 The model was trained on 4*RTX 2080 Ti at AutoDL platform (nearly 2:40~ for only around 1 epoch (>_<)) as an RTX 3080 or higher GPU requires CUDA version 11.x or above to be utilized.
 
 ### Inference
+After running train.py, remember to load the model parameters from the .pth file in the runs/ directory.
+You can check it yourself:
+```
+import torch
+from transformers import GPT2LMHeadModel
+ckpt = torch.load("YOUR_pth", map_location="cpu")
+print(ckpt.keys())
+#for example
+model = GPT2LMHeadModel.from_pretrained("thu-coai/CDial-GPT2_LCCC-base")
+print("Before loading:", model.transformer.wte.weight[0, :5])
+state_dict = torch.load("YOUR_pth", map_location="cpu")
+model.load_state_dict(state_dict)
+print("After loading:", model.transformer.wte.weight[0, :5])
+```
+Infer:
 ```
 YOUR_MODEL_PATH: : the model path used for generation (i.e. fine-tuned model:.../model_training_args.bin)
-python infer.py --gpt2 --model_checkpoint ...model_training_args.bin --datapath data/STC_test.json --out_path STC_result.txt  # Inference on a corpus
+python infer.py --gpt2 --model_checkpoint YOUR_MODEL_PATH --datapath data/STC_test.json --out_path STC_result.txt  # Inference on a corpus
 python interact.py --gpt2 --model_checkpoint YOUR_MODEL_PATH  # Interact on the terminal
 ```
 
@@ -82,28 +97,53 @@ My results (CDial-GPT2_LCCC-base fine-tuned on STC):
 
 | Post | Response |
 | :----- | :---------- |
+| 这 居 然 是 北 京 不 是 哈 尔 滨 。 | 哈 尔 滨 的 天 气 好 像 比 北 京 好 点 ， 我 这 里 就 是 小 雨 ， 白 天 都 是 大 风 |
+| 运 营 商 校 园 广 告 大 P K ， 太 欢 乐 了 ！ 哈 哈 哈 。 | 我 以 为 是 马 云 的 广 告 。 |
+| D e l s a S p o s a 糖 果 色 系 列 婚 纱 ， 粉 蓝 红 紫 ， 俏 皮 又 清 新 ， 你 喜 欢 吗 ？ | 最 后 一 件 太 美 了 ， 美 的 不 像 话 ！ |
 
 interactive script：
 
 | Roel | Response |
 | :----- | :---------- |
 | User | 别爱我没结果 |
-| Bot | 没 结 果 的 爱 是 多 么 的 痛 。 |
+| Bot | 别 爱 我 了 ， 一 起 死 磕 |
 | User | 但是爱过就可以了 |
-| Bot | 有 时 候 ，爱 情 就 是 一 场 游 戏 。 |
+| Bot | 别 爱 我 没 结 果 就 可 以 了 |
 | User | 输的总是我 |
-| Bot | 我 爱 你 ， 就 像 我 爱 你 一 样 。 |
+| Bot | 没 结 果 ， 一 起 死 磕 |
 | User | 你可拉到吧 |
-| Bot | 你 可 拉 到 吧 。 |
+| Bot | 输 的 总 是 我 |
 | User | 别学我说话 |
-| Bot | 我 说 话 就 是 你 不 行 。 |
+| Bot | 别 爱 我 了 ， 我 都 不 爱 你 了 |
 | User | 逼我动手是吧 |
-| Bot | 不 ， 是 逼 你 动 口 是 吧 |
+| Bot | 我 说 的 是 别 人 |
+
+hhh...
 
 or just use the original CDial-GPT2_LCCC-base:
 
 | Post | Response |
 | :----- | :---------- |
+| 这 居 然 是 北 京 不 是 哈 尔 滨 。 | 哈 尔 滨 的 天 气 好 像 比 北 京 好 点 ， 我 这 里 就 是 小 雨 ， 白 天 都 是 大 风 |
+| 运 营 商 校 园 广 告 大 P K ， 太 欢 乐 了 ！ 哈 哈 哈 。 | 我 以 为 是 马 云 的 广 告 。 |
+| D e l s a S p o s a 糖 果 色 系 列 婚 纱 ， 粉 蓝 红 紫 ， 俏 皮 又 清 新 ， 你 喜 欢 吗 ？ | 最 后 一 件 太 美 了 ， 美 的 不 像 话 ！ |
+
+| Roel | Response |
+| :----- | :---------- |
+| User | 别爱我没结果 |
+| Bot | 没 有 |
+| User | 但是爱过就可以了 |
+| Bot | 我 也 是 |
+| User | 输的总是我 |
+| Bot | 哈 哈 |
+| User | 你可拉到吧 |
+| Bot | 可 以 啊 |
+| User | 别学我说话 |
+| Bot | 好 吧 ， 我 以 为 你 说 话 呢 |
+| User | 逼我动手是吧 |
+| Bot | 我 不 要 你 动 手 就 行 了 |
+
+em...somewhat perfunctory
 
 more interesting dialogues:
 
