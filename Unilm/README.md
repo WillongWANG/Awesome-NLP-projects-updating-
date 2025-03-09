@@ -14,7 +14,7 @@ I pretrained the original model ```BertForPreTrainingLossMask from src.pytorch_p
 python run_seq2seq.py
 ```
 default parameters:  
-```--num_train_epochs: ...```    
+```--num_train_epochs: 10000```(loss=) 
 ```--beam_size (beam search topk): 3```
 
 After running, replace the .bin file in ```model_dir/``` with the .bin file generated in ```output_dir/``` (renamed to ```pytorch_model.bin```). **This is important!**
