@@ -1,7 +1,6 @@
 This project utilized the sequence-to-sequence language modeling capability of [UniLM](https://arxiv.org/abs/1905.03197) (via self-attention masks) trained on a generation task (source not masked, only target masked, data format: pairs of text + corresponding summaries or paraphrases) to generate abstracts or paraphrases using [Nucleus Sampling](https://arxiv.org/abs/1904.09751). The file finetune_data.csv in Unilm_finetuning/data/ is used for the paraphrasing task.
 
 ![](https://github.com/WillongWANG/Awesome-NLP-projects-updating-/blob/main/Unilm/p1.png)   
-
 ![](https://github.com/WillongWANG/Awesome-NLP-projects-updating-/blob/main/Unilm/p2.png)
 
 ### Pretraining:
@@ -23,11 +22,13 @@ After running, replace the .bin file in model_dir/ with the .bin file generated 
 Beam search and nucleus sampling demos are in decode_method.py.
 
 ### Paraphrasing:
+```
 python decode_seq2seq.py.
+```
 
 examples:
 
-|test_data|top1|top2|top3|  
-| :------ | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
-|gggg||||
+| test_data | top1 | top2 | top3 |
+| :-------: | :--: | :--: | :--: |
+|      |      |      |      |
 
