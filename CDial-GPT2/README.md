@@ -128,6 +128,8 @@ or just use the original CDial-GPT2_LCCC-base:
 | 运 营 商 校 园 广 告 大 P K ， 太 欢 乐 了 ！ 哈 哈 哈 。 | 我 以 为 是 马 云 的 广 告 。 |
 | D e l s a S p o s a 糖 果 色 系 列 婚 纱 ， 粉 蓝 红 紫 ， 俏 皮 又 清 新 ， 你 喜 欢 吗 ？ | 最 后 一 件 太 美 了 ， 美 的 不 像 话 ！ |
 
+interactive script：
+
 | Roel | Response |
 | :----- | :---------- |
 | User | 别爱我没结果 |
