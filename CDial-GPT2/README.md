@@ -30,7 +30,7 @@ In the original paper, the number of the warmup epoch was set to 1, and the maxi
 The model was trained on 4*RTX 2080 Ti at AutoDL platform (nearly 2:40~ for only around 1 epoch (>_<)) as an RTX 3080 or higher GPU requires CUDA version 11.x or above to be utilized.
 
 ### Inference
-After running train.py, remember to load the model parameters from the .pth file in the runs/ directory.
+After running train.py, remember to load the model parameters from the .pth checkpoint file in the runs/ directory.
 You can check it yourself:
 ```
 import torch
