@@ -23,7 +23,7 @@ Beam search and nucleus sampling demos are in decode_method.py.
 
 ### Paraphrasing:
 ```
-python decode_seq2seq.py.
+python decode_seq2seq.py
 ```
 
 examples:
