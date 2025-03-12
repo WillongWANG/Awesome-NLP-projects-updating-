@@ -14,7 +14,7 @@ I pretrained the original model ```BertForPreTrainingLossMask from src.pytorch_p
 python run_seq2seq.py
 ```
 default parameters:  
-```--num_train_epochs: 10000```(loss=) 
+```--num_train_epochs: 10000 #adjustable according to the results```
 ```--beam_size (beam search topk): 3```
 
 After running, replace the .bin file in ```model_dir/``` with the .bin file generated in ```output_dir/``` (renamed to ```pytorch_model.bin```). **This is important!**
@@ -26,6 +26,7 @@ Beam search and nucleus sampling demos are in ```decode_method.py```.
 python decode_seq2seq.py
 ```
 
+paraphrasing results are in [test.json](https://github.com/WillongWANG/Awesome-NLP-projects-updating-/blob/main/Unilm/Unilm_finetuning/data/test.json).
 examples:
 
 | test_data | top1 | top2 | top3 |
