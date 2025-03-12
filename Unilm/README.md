@@ -26,10 +26,15 @@ Beam search and nucleus sampling demos are in ```decode_method.py```.
 python decode_seq2seq.py
 ```
 
-paraphrasing results are in [test.json](https://github.com/WillongWANG/Awesome-NLP-projects-updating-/blob/main/Unilm/Unilm_finetuning/data/test.json).
+paraphrasing results are in [test.json](https://github.com/WillongWANG/Awesome-NLP-projects-updating-/blob/main/Unilm/Unilm_finetuning/data/test.json).  
+
 examples:
 
 | test_data | top1 | top2 | top3 |
 | :-------: | :--: | :--: | :--: |
-|      |      |      |      |
+| 河南濮阳一进口冷冻带鱼核酸阳性 | 冷冻带鱼，美味带鱼 | 冷冻带鱼，美味鲜美 | 冷冻带鱼，美味带鱼美味 |
+| 网友呼吁抵制素媛案罪犯羽绒服牌子 | 羽绒服，穿出性感范 | 羽绒服，穿出性感感 | 羽绒服，穿出性感范儿 |
+| 凡尔赛牛肉泡面 | 牛肉泡面，好吃又好吃 | 牛肉泡面，好吃又爽口 | 牛肉泡面，好吃又爽滑 |
+| 迪士尼公主超绝丝绒裙 | 丝绒裙，穿出公主范 | 丝绒裙，打造公主范 | 丝绒裙，穿出公主范儿 |
+| 倪妮深V锁骨杀| 深v锁骨杀，穿出女神范 | 深v锁骨杀，你的锁骨杀 | 深v锁骨杀，穿出性感锁骨杀 |
 
