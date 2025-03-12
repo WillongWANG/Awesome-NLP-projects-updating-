@@ -104,7 +104,7 @@ def main():
     parser.add_argument('--subset', type=int, default=0,
                         help="Decode a subset of the input dataset.")
     parser.add_argument("--output_file", type=str, help="output file",
-                        default="data/test_retrieval_predict_m2.json")
+                        default="data/test.json")
     parser.add_argument("--split", type=str, default="validation",
                         help="Data split (train/val/test).")
     parser.add_argument('--tokenized_input', action='store_true',
