@@ -7,7 +7,7 @@ This project utilized the sequence-to-sequence language modeling capability of [
 ```
 python train_local.py
 ```
-I pretrained the original model ```BertForPreTrainingLossMask from src.pytorch_pretrained_bert.modeling``` for 1000 epochs, resulting in ```model.4037.bin``` (not uploaded, try it yourself) with ```mlm_loss 7.2318 and nsp_loss 0.6929```. The performance is inferior to the provided model ```/model_dir/pytorch_model.bin``` with ```mlm_loss 6.7914 and nsp_loss 0.7013```. Even after training the model initialized from the provided ```pytorch_model.bin``` for another 3000 epochs, there was no improvement: ```mlm_loss 6.5479, nsp_loss 0.7011```.
+I pretrained the original model ```BertForPreTrainingLossMask from src.pytorch_pretrained_bert.modeling``` for 1000 epochs, resulting in ```model.4037.bin``` (not uploaded, try it yourself) with ```mlm_loss 7.2318 and nsp_loss 0.6929```. The performance is inferior to the provided model ```/model_dir/pytorch_model.bin``` with ```mlm_loss 6.7914 and nsp_loss 0.7013```. Even after training the model initialized from the provided ```pytorch_model.bin``` for another 3000 epochs, there was no improvement: ```mlm_loss 6.5479, nsp_loss 0.7011```. (The poor generation quality may be caused by the persistently high pre-training loss)
 
 ### Fine-tuning:
 ```
