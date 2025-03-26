@@ -79,7 +79,7 @@ def main():
                         help="The maximum total input sequence length after WordPiece tokenization. \n"
                              "Sequences longer than this will be truncated, and sequences shorter \n"
                              "than this will be padded.")
-    parser.add_argument('--max_position_embeddings', type=int, default=256,
+    parser.add_argument('--max_position_embeddings', type=int, default=512,
                         help="max position embeddings")
     parser.add_argument("--do_lower_case", action='store_true', default=True,
                         help="Set this flag if you are using an uncased model.")
