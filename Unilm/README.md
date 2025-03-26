@@ -16,7 +16,7 @@ Based on the equation shown below, the optimal loss is around 6.5416 when not bo
 Thus, I can only optimize the critical batch size as much as possible based on the equation below, which does not directly depend on model size. With our 216,830 tokens as a single batch, we could achieve a loss of around 4.1940–4.1941.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/2.png)  
 
-Additionally, based on the following equation, if we set parameter update steps (--total_steps) =
+Additionally, based on the following equation, if we set parameter update steps (--total_steps) = 1000, the loss is around 4.591. If --total_steps==2000, the loss is around 3.8712.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/3.png)  
 
 I pretrained the original model ```BertForPreTrainingLossMask from src.pytorch_pretrained_bert.modeling``` for 1000 epochs, resulting in ```model.4037.bin``` (not uploaded, try it yourself) with ```mlm_loss 7.2318 and nsp_loss 0.6929```. The performance is inferior to the provided model ```/model_dir/pytorch_model.bin``` with ```mlm_loss 6.7914 and nsp_loss 0.7013```. Even after training the model initialized from the provided ```pytorch_model.bin``` for another 3000 epochs, there was no improvement: ```mlm_loss 6.5479, nsp_loss 0.7011```. (The poor generation quality may be caused by the persistently high pre-training loss)
