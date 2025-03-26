@@ -80,7 +80,7 @@ def main():
                              "Sequences longer than this will be truncated, and sequences shorter \n"
                              "than this will be padded."
                              "['[CLS]'] + tokens_a + ['[SEP]'] + tokens_b + ['[SEP]']")
-    parser.add_argument('--max_position_embeddings', default=256, type=int,
+    parser.add_argument('--max_position_embeddings', default=512, type=int,
                         help="max position embeddings")
     parser.add_argument("--do_train", action='store_true', default=True,
                         help="Whether to run training.")
