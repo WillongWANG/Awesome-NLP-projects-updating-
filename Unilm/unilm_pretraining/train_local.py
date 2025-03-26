@@ -59,7 +59,7 @@ def main():
                         type=str,
                         help="bert vocab path")
     parser.add_argument("--config_path",
-                        default="bert-base-chinese/bert_config_uncased_tiny.json",
+                        default="bert-base-chinese/bert_config.json",
                         type=str,
                         help="Bert config file path.")
     parser.add_argument("--model_output_dir",
