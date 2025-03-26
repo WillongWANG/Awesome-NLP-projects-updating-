@@ -10,10 +10,13 @@ python train_local.py
 ```/data/pretrain/pretrain_sample.txt``` contains 216830 Chinese characters (including punctuations), which can be approximately considered as 216830 tokens.  
 According to [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361), model performance depends only mildly on model shape (d<sub>ff</sub>,d<sub>model</sub>,n<sub>layer</sub>,n<sub>head</sub>) with the total number of non-embedding parameters (N) fixed. For ```/bert-base-chinese/bert_config_uncased_tiny.json```, the model's N is ```2*(4*32^2+4*32+2*32*32+2*32+2*2*32)=12928```.   
 ```bert_config.json```'s N is ```12*(4*768^2+4*768+2*768*3072+768+3072+2*2*768)+3*(768²+768)```.(The parameters for LayerNorm remain to be confirmed, and pooler_num_attention_heads and pooler_size_per_head are ignored)  
+
 Based on the equation shown below, the optimal loss is around 6.6489 when not bottlenecked by compute resources, which is a high loss.
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/1.png)  
+
 Thus, I can only optimize the critical batch size as much as possible based on the equation below, which does not directly depend on model size. With our 216,830 tokens as a single batch, we could achieve a loss of around 4.1940–4.1941.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/2.png)  
+
 Additionally, based on the following equation, the first term alone already reaches approximately 5.5848, which is still a relatively high loss.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/3.png)  
 
