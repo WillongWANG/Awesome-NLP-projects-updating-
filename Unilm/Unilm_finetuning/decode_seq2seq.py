@@ -91,7 +91,7 @@ def main():
                         help="The maximum total input sequence length after WordPiece tokenization. \n"
                              "Sequences longer than this will be truncated, and sequences shorter \n"
                              "than this will be padded.")
-    parser.add_argument('--max_position_embeddings', default=256, type=int,
+    parser.add_argument('--max_position_embeddings', default=512, type=int,
                         help="max position embeddings")
     # decoding parameters
     parser.add_argument('--fp16', action='store_true',
