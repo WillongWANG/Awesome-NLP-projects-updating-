@@ -8,7 +8,7 @@ This project utilized the sequence-to-sequence language modeling capability of [
 python train_local.py
 ```
 ```/data/pretrain/pretrain_sample.txt``` contains 216830 Chinese characters (including punctuations), which can be approximately considered as 216830 tokens.  
-According to [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361), model performance depends only mildly on model shape (d<sub>ff</sub>,d<sub>model</sub>,n<sub>layer</sub>,n<sub>head</sub>) with the total number of non-embedding parameters (N) fixed. For ```/bert-base-chinese/bert_config_uncased_tiny.json```, the model's N is ```2*(4*32^2+4*32+2*32*32+2*32+2*2*32)=12928```.   
+According to [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361), model performance depends only mildly on model shape (d<sub>ff</sub>,d<sub>model</sub>,n<sub>layer</sub>,n<sub>head</sub>) with the total number of non-embedding parameters (N) fixed. For ```/bert-base-chinese/bert_config_uncased_tiny.json```, the model's N is ```2*(4*32^2+4*32+2*32*32+2*32+2*2*32)=12928```.(Actually used in the code)     
 ```bert_config.json```'s N is ```12*(4*768^2+4*768+2*768*3072+768+3072+2*2*768)+3*(768²+768)```.(The parameters for LayerNorm remain to be confirmed, and pooler_num_attention_heads and pooler_size_per_head are ignored)  
 
 Based on the equation shown below, the optimal loss is around 6.6489 when not bottlenecked by compute resources, which is a high loss.
