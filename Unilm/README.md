@@ -13,7 +13,7 @@ According to [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/200
 For ```/bert-base-chinese/bert_config_uncased_tiny.json```, the model's N is ```2*(4*32^2+4*32+2*32*32+2*32+2*2*32)=12928```, where our 216830 tokens does not satisfy the following equation (data size is not enough), so overfitting may not be avoided.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/4.png)  
 ```bert_config.json```'s N is ```12*(4*768^2+4*768+2*768*3072+768+3072+2*2*768)+3*(768²+768)=86826240```.(The parameters for LayerNorm remain to be confirmed, and pooler_num_attention_heads and pooler_size_per_head are ignored)  
-Based on the equation shown below, the optimal loss is around 6.6489 with N=12928 when not bottlenecked by compute resources, which is a high loss.
+Based on the equation shown below, the optimal loss is around 6.6489 with N=12928 when not bottlenecked by compute resources, which is a high loss.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/1.png)  
 Thus, we can only optimize the critical batch size as much as possible based on the equation below, which does not directly depend on model size. With our 216,830 tokens as a single batch, we could achieve a loss of around 4.1940–4.1941. However, the problem of overfitting cannot be solved.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/2.png)  
