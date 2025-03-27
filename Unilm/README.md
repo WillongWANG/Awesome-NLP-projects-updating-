@@ -13,7 +13,7 @@ According to [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/200
 Based on the equation shown below, the optimal loss is around 6.5416 when not bottlenecked by compute resources, which is a high loss.
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/1.png)  
 
-Thus, I can only optimize the critical batch size as much as possible based on the equation below, which does not directly depend on model size. With our 216,830 tokens as a single batch, we could achieve a loss of around 4.1940–4.1941.  
+Thus, I can only optimize the critical batch size as much as possible based on the equation below, which does not directly depend on model size. With our 216,830 tokens as a single batch (need GPU ...), we could achieve a loss of around 4.1940–4.1941.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/2.png)  
 
 Additionally, based on the following equation, if we set parameter update steps (--total_steps) = 1000, the loss is around 4.591. If --total_steps==2000, the loss is around 3.8712.  
