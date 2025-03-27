@@ -7,7 +7,7 @@ This project utilized the sequence-to-sequence language modeling capability of [
 ```
 python train_local.py
 ```
-Some empirical analysis:  
+**Some empirical analysis:**    
 ```/data/pretrain/pretrain_sample.txt``` contains 216830 Chinese characters (including punctuations), which can be approximately considered as 216830 tokens.  
 According to [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361), model performance depends only mildly on model shape (d<sub>ff</sub>,d<sub>model</sub>,n<sub>layer</sub>,n<sub>head</sub>) with the total number of non-embedding parameters (N) fixed. 
 For ```/bert-base-chinese/bert_config_uncased_tiny.json```, the model's N is ```2*(4*32^2+4*32+2*32*32+2*32+2*2*32)=12928```, where our 216830 tokens does not satisfy the following equation (data size is not enough), so overfitting may not be avoided.  
