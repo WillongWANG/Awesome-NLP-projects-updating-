@@ -7,17 +7,20 @@ This project utilized the sequence-to-sequence language modeling capability of [
 ```
 python train_local.py
 ```
+Some empirical analysis:  
 ```/data/pretrain/pretrain_sample.txt``` contains 216830 Chinese characters (including punctuations), which can be approximately considered as 216830 tokens.  
 According to [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361), model performance depends only mildly on model shape (d<sub>ff</sub>,d<sub>model</sub>,n<sub>layer</sub>,n<sub>head</sub>) with the total number of non-embedding parameters (N) fixed. 
-For ```/bert-base-chinese/bert_config_uncased_tiny.json```(actually used in the code), the model's N is ```2*(4*32^2+4*32+2*32*32+2*32+2*2*32)=12928```. ```bert_config.json```'s N is ```12*(4*768^2+4*768+2*768*3072+768+3072+2*2*768)+3*(768²+768)=86826240```.(The parameters for LayerNorm remain to be confirmed, and pooler_num_attention_heads and pooler_size_per_head are ignored)  
- Based on the equation shown below, the optimal loss is around 6.6489 when not bottlenecked by compute resources, which is a high loss.
- ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/1.png)  
- Thus, I can only optimize the critical batch size as much as possible based on the equation below, which does not directly depend on model size. With our 216,830 tokens as a single batch (need GPU ...), we could achieve a loss of around 4.1940–4.1941.  
- ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/2.png)  
-Additionally, based on the following equation, if we set parameter update steps (--total_steps) = 1000, the loss is around 4.591. If --total_steps==2000, the loss is around 3.8712. 
- ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/3.png)  
+For ```/bert-base-chinese/bert_config_uncased_tiny.json```, the model's N is ```2*(4*32^2+4*32+2*32*32+2*32+2*2*32)=12928```, where our 216830 tokens does not satisfy the following equation (data size is not enough), so overfitting may not be avoided.  
+![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/4.png)  
+```bert_config.json```'s N is ```12*(4*768^2+4*768+2*768*3072+768+3072+2*2*768)+3*(768²+768)=86826240```.(The parameters for LayerNorm remain to be confirmed, and pooler_num_attention_heads and pooler_size_per_head are ignored)  
+Based on the equation shown below, the optimal loss is around 6.6489 when not bottlenecked by compute resources, which is a high loss.
+![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/1.png)  
+Thus, we can only optimize the critical batch size as much as possible based on the equation below, which does not directly depend on model size. With our 216,830 tokens as a single batch, we could achieve a loss of around 4.1940–4.1941. However, the problem of overfitting cannot be solved.  
+![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/2.png)  
+Additionally, based on the following equation, the first term alone already reaches approximately 5.5848, which is still a relatively high loss. 
+![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/3.png)  
 
-Following the above analysis, I pretrained the original model ```BertForPreTrainingLossMask from src.pytorch_pretrained_bert.modeling``` for 1000 epochs (=total_steps because our 216,830 tokens as a single batch), resulting in ```.bin``` (not uploaded, try it yourself) with ```mlm_loss  and nsp_loss ```. The performance is inferior to the provided model ```/model_dir/pytorch_model.bin``` with ```mlm_loss 6.7914 and nsp_loss 0.7013```.(The poor generation quality may be caused by the persistently high pre-training loss)
+The performance is inferior to the provided model ```...``` with ```mlm_loss 6.7914 and nsp_loss 0.7013```.(The poor generation quality may be caused by the persistently high pre-training loss)
 
 ### Fine-tuning:
 ```
