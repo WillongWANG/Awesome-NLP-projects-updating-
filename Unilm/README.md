@@ -20,14 +20,11 @@ Thus, we can only optimize the critical batch size as much as possible based on 
 Additionally, based on the following equation, the first term alone already reaches approximately 5.5848 with N=12928, which is still a relatively high loss.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/3.png)  
 
-The performance is inferior to the provided model ```...``` with ```mlm_loss 6.7914 and nsp_loss 0.7013```.(The poor generation quality may be caused by the persistently high pre-training loss)
-
 ### Fine-tuning:
 ```
 python run_seq2seq.py
 ```
 default parameters:  
-```--num_train_epochs: 10000 #adjustable according to the results```  
 ```--beam_size (beam search topk): 3```
 
 After running, replace the .bin file in ```model_dir/``` with the .bin file generated in ```output_dir/``` (renamed to ```pytorch_model.bin```). **This is important!**
