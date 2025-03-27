@@ -17,7 +17,7 @@ Based on the equation shown below, the optimal loss is around 6.6489 with N=1292
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/1.png)  
 Thus, we can only optimize the critical batch size as much as possible based on the equation below, which does not directly depend on model size. With our 216,830 tokens as a single batch, we could achieve a loss of around 4.1940–4.1941. However, the problem of overfitting cannot be solved.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/2.png)  
-Additionally, based on the following equation, the first term alone already reaches approximately 5.5848 with N=12928, which is still a relatively high loss. 
+Additionally, based on the following equation, the first term alone already reaches approximately 5.5848 with N=12928, which is still a relatively high loss.  
 ![](https://github.com/WillongWANG/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm/3.png)  
 
 The performance is inferior to the provided model ```...``` with ```mlm_loss 6.7914 and nsp_loss 0.7013```.(The poor generation quality may be caused by the persistently high pre-training loss)
